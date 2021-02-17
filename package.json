@@ -1,0 +1,52 @@
+{
+  "name": "webpack-seed",
+  "version": "1.0.0",
+  "description": "Webpack Seed",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --hot --color --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somosphi/webpack-seed.git"
+  },
+  "author": {
+    "name": "Henrique Rieger",
+    "email": "henrique.rieger@gmail.com"
+  },
+  "bugs": "https://github.com/somosphi/webpack-seed/issues",
+  "contributors": [],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react-hot-loader": "^4.13.0",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}
