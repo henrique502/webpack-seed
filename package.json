@@ -1,52 +1,84 @@
 {
   "name": "webpack-seed",
   "version": "1.0.0",
+  "private": true,
   "description": "Webpack Seed",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --hot --color --config webpack.config.js",
-    "build": "webpack --mode production --config webpack.config.js"
+    "start": "webpack serve --config webpack.development.js",
+    "build": "webpack --config webpack.production.js",
+    "test": "jest --ci --forceExit --watchAll=false --detectOpenHandles --silent --env=jsdom --coverage --testResultsProcessor jest-sonar-reporter",
+    "watch": "jest --watchAll --detectOpenHandles --silent --env=jsdom --coverage --testResultsProcessor jest-sonar-reporter"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/somosphi/webpack-seed.git"
+    "url": "git+https://github.com/henrique502/webpack-seed.git"
   },
-  "author": {
-    "name": "Henrique Rieger",
-    "email": "henrique.rieger@gmail.com"
+  "author": "Henrique Rieger <henrique.rieger@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/henrique502/webpack-seed/issues"
   },
-  "bugs": "https://github.com/somosphi/webpack-seed/issues",
+  "homepage": "https://github.com/henrique502/webpack-seed#readme",
+  "keywords": [],
   "contributors": [],
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
-    "@babel/preset-react": "^7.12.13",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.2",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.20.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "react-hot-loader": "^4.13.0",
-    "webpack": "^5.22.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.7.3"
-  },
   "dependencies": {
-    "lodash": "^4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "dotenv": "^10.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@testing-library/react": "^12.1.2",
+    "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.15",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "babel-jest": "^27.4.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-styled-components": "^2.0.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.0.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.4.2",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "jest-styled-components": "^7.0.8",
+    "react-test-renderer": "^17.0.2",
+    "sonarqube-scanner": "^2.8.1",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
     ]
   }
 }
